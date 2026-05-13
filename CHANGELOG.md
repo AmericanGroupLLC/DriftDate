@@ -2,11 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - v0.1.0
+## [Unreleased]
 
-Initial public release. See distribution/whatsnew/v0.1.0/en-US.txt for the user-facing summary.
+### Added
+
+- Repo hygiene scaffolding: CI badges and Android + Wear + Supabase quickstart in
+  `README.md`; `.github/CODEOWNERS`; 5 issue templates (bug, feature, security,
+  doc, question); `backend-typecheck` CI job (Deno fmt + lint) as
+  `continue-on-error`; Supabase entries (`.supabase/`, `supabase/.temp/`,
+  `supabase/.env*`, `*.env.local`) added to `.gitignore`.
+
+## [0.1.0] - Unreleased
+
+Initial public release. See `distribution/whatsnew/v0.1.0/en-US.txt` for the
+user-facing summary.
 
 ## Commit history (since repo creation)
 

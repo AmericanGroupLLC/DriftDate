@@ -79,6 +79,17 @@ android/gradle/wrapper/gradle-wrapper.jar
 !android/gradlew
 !android/gradlew.bat
 
+# ── Supabase / backend ────────────────────────────────────────────
+.supabase/
+supabase/.temp/
+supabase/.branches/
+supabase/.env
+supabase/.env.*
+backend/supabase/.temp/
+backend/supabase/.env
+backend/supabase/.env.*
+*.env.local
+
 # ── CI / scratch ──────────────────────────────────────────────────
 distribution/staging-*/
 .scratch/

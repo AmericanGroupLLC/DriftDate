@@ -2,7 +2,12 @@
 
 > **Meet people at your pace, in your orbit.**
 
-A layered dating platform where people choose how they want to be discovered:
+[![CI](https://github.com/AmericanGroupLLC/DriftDate/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/AmericanGroupLLC/DriftDate/actions/workflows/ci.yml)
+[![Android](https://github.com/AmericanGroupLLC/DriftDate/actions/workflows/android.yml/badge.svg?branch=master)](https://github.com/AmericanGroupLLC/DriftDate/actions/workflows/android.yml)
+[![Backend](https://github.com/AmericanGroupLLC/DriftDate/actions/workflows/backend.yml/badge.svg?branch=master)](https://github.com/AmericanGroupLLC/DriftDate/actions/workflows/backend.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+A **layered dating platform** where people choose how they want to be discovered:
 **Server**, **State**, **County**, or **ZIP**. Every chat opens with three reply
 suggestions — Casual, Context, Playful — so nobody stalls in the blank textbox.
 Verification before chat unlocks. Public-meetup framing instead of private
@@ -36,7 +41,7 @@ shared/DriftCore # Apple-side shared models + domain helpers + tests
 ios/             # iPhone app + Notification Service Extension
 watchos/         # Apple Watch app + WidgetKit complication
 android/         # :core JVM + :app phone + :wear smartwatch
-.github/workflows# 7 workflows: ci, ios, android, marketing, backend, pre-release-tests, release
+.github/workflows/ # CI workflows (ci, android, ios, backend, marketing, release)
 scripts/         # local dev helpers (test-all, run-*-emulator, seed-supabase)
 distribution/    # release whatsnew text per locale
 ```
@@ -45,22 +50,46 @@ See [`DESIGN.md`](DESIGN.md) for the full architecture, [`SAFETY.md`](SAFETY.md)
 for verification + reporting + location-fuzzing math, and
 [`DRIFT-FEATURES.md`](DRIFT-FEATURES.md) for the feature inventory.
 
-## Get started
+## Quickstart
+
+### Android phone app
 
 ```sh
-# Local backend (requires Supabase CLI)
-./scripts/seed-supabase.sh
-
-# iOS Simulator
-./scripts/run-ios-sim.sh
-
-# Android emulator
-./scripts/run-android-emulator.sh
-
-# Run every test suite
-./scripts/test-all.sh
+cd android
+./gradlew :app:assembleDebug
+# Output: android/app/build/outputs/apk/debug/app-debug.apk
 ```
+
+### Wear OS app
+
+```sh
+cd android
+./gradlew :wear:assembleDebug
+# Output: android/wear/build/outputs/apk/debug/wear-debug.apk
+```
+
+### Supabase backend (Edge Functions)
+
+```sh
+cd backend
+supabase functions deploy           # deploy all functions
+supabase db push                    # apply migrations
+```
+
+### Helper scripts
+
+```sh
+./scripts/seed-supabase.sh          # local backend seed
+./scripts/run-android-emulator.sh   # boot emulator + install
+./scripts/test-all.sh               # run every test suite
+```
+
+## Umbrella
+
+Drift is an **American Group LLC** product. See the
+[AmericanGroupLLC org page](https://github.com/AmericanGroupLLC) for sibling
+repos and project umbrella.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). © 2026 American Group LLC.
